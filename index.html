@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Desglosando Algoritmos</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
+    </style>
+  </head>
+
+  <body>
+    <nav
+      class="navbar navbar-expand-lg navbar-dark bg-dark"
+      style="background: linear-gradient(to right, #434343, #000)"
+    >
+      <div class="container-fluid">
+        <a class="navbar-brand" href="index.html">Desglosando Algoritmos</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Inicio</a>
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                href="https://gitlab.com/semintegrador/sem-integrador-ii"
+                target="_blank"
+                >Índice General</a
+              >
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+                >Ejercicios</a
+              >
+              <ul
+                class="dropdown-menu dropdown-menu-dark dropdown-menu-end custom-dropdown"
+              >
+                <li>
+                  <a class="dropdown-item" href="Ejercicios/Ejercicio1.html"
+                    ><strong>Ejercicio 1</strong> - Hotels Along the Croatian
+                    Coast</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="Ejercicios/Ejercicio2.html"
+                    ><strong>Ejercicio 2</strong> - Calculating Function</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="Ejercicios/Ejercicio3.html"
+                    ><strong>Ejercicio 3 </strong>- Favorite Sequence</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="Ejercicios/Ejercicio4.html"
+                    ><strong>Ejercicio 4 </strong>- 2^Sort</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="Ejercicios/Ejercicio5.html"
+                    ><strong>Ejercicio 5 </strong>- Walk on a multiplication
+                    table</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="Ejercicios/Ejercicio6.html"
+                    ><strong>Ejercicio 6 </strong>- Vlad and a Sum of Digits</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="Ejercicios/Ejercicio7.html"
+                    ><strong>Ejercicio 7 </strong>- Simple Repetition</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="Ejercicios/Ejercicio8.html"
+                    ><strong>Ejercicio 8 </strong>- Diverse Team</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="Ejercicios/Ejercicio9.html"
+                    ><strong>Ejercicio 9 </strong>- Worms</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="Ejercicios/Ejercicio10.html"
+                    ><strong>Ejercicio 10</strong> - Longest Common Prefix</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="Ejercicios/Ejercicio11.html"
+                    ><strong>Ejercicio 11</strong> - First and Last
+                    Occurrences</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="Ejercicios/Ejercicio12.html"
+                    ><strong>Ejercicio 12</strong> - Minimum and maximum of an
+                    array</a
+                  >
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container py-4">
+      <section class="mb-5">
+        <div class="row align-items-center">
+          <div class="col-md-8">
+            <h2>
+              <strong id="griss">Desglosando algoritmos: </strong>
+              <h3>Correctitud, Completitud y Complejidad</h3>
+            </h2>
+          </div>
+          <div class="col-md-4 text-center">
+            <img
+              src="imagenes/codigo.png"
+              alt="Ejercicio 3"
+              class="img-fluid"
+              style="max-height: 250px"
+            />
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="row align-items-center mt-4">
+          <div class="col-12 col-md-6 mb-3 mb-md-0 text-center">
+            <div class="ratio ratio-16x9 mx-auto" style="max-width: 480px">
+              <img src="https://www.ie.edu/insights/wp-content/uploads/2020/06/El-poder-de-los-algoritmos-2000x1131-1.jpg" 
+     alt="El poder de los algoritmos" 
+     style="width:100%; max-width:800px; height:auto; border-radius:8px; margin:20px auto; display:block;">
+            </div>
+          </div>
+          <div
+            class="texto-conceptos col-12 col-md-6 text-center text-md-start"
+          >
+            <p>
+              <strong>Desglosando algoritmos</strong> es una herramienta
+              educativa para estudiantes de Análisis de Algoritmos. Presenta
+              ejercicios con descripciones, soluciones en código y análisis de
+              complejidad, reforzando la comprensión de eficiencia y
+              correctitud. Además, explica los conceptos de correctitud y
+              completitud, brindando una base sólida para el estudio de
+              algoritmos.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="mb-5">
+        <h2 id="titulo-conceptos" class="mt-5">Conceptos básicos</h2>
+        <div class="concepts row mt-4">
+          <div class="texto-conceptos col-12 col-md-4 mb-4 mb-md-0">
+            <h3>Correctitud</h3>
+            <p>
+              Un algoritmo es correcto si produce la salida esperada para todas
+              las entradas válidas, garantizando que su solución es válida en
+              todos los casos.
+            </p>
+          </div>
+          <div class="col-12 col-md-4 mb-4 mb-md-0 text-center">
+            <div class="ratio ratio-16x9">
+              
+            </div>
+          </div>
+          <div class="texto-conceptos col-12 col-md-4">
+            <h3>Completitud</h3>
+            <p>
+              Un algoritmo es completo si, dado un conjunto de entradas válidas,
+              siempre es capaz de encontrar una solución cuando ésta existe.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="ejercicios">
+        <h2>Ejercicios</h2>
+        <div class="exercises row">
+          <div class="exercise col-12 col-sm-6 col-md-4 mb-4">
+            <a href="Ejercicios/Ejercicio1.html">
+              <div class="image-container">
+                <img
+                  src="imagenes/hotel.png"
+                  alt="Ejercicio 1"
+                  class="main-image img-fluid"
+                />
+                <img
+                  src="imagenes/facil.png"
+                  alt="Facil"
+                  class="overlay-image img-fluid"
+                />
+              </div>
+              <p>
+                <strong>Ejercicio 1</strong><br />Hotels Along the Croatian
+                Coast
+              </p>
+            </a>
+          </div>
+          <div class="exercise col-12 col-sm-6 col-md-4 mb-4">
+            <a href="Ejercicios/Ejercicio2.html">
+              <div class="image-container">
+                <img
+                  src="imagenes/funcion.png"
+                  alt="Ejercicio 2"
+                  class="main-image img-fluid"
+                />
+                <img
+                  src="imagenes/facil.png"
+                  alt="Facil"
+                  class="overlay-image img-fluid"
+                />
+              </div>
+              <p><strong>Ejercicio 2</strong><br />Calculating Function</p>
+            </a>
+          </div>
+          <div class="exercise col-12 col-sm-6 col-md-4 mb-4">
+            <a href="Ejercicios/Ejercicio3.html">
+              <div class="image-container">
+                <img
+                  src="imagenes/secuencia.png"
+                  alt="Ejercicio 3"
+                  class="main-image img-fluid"
+                />
+                <img
+                  src="imagenes/facil.png"
+                  alt="Facil"
+                  class="overlay-image img-fluid"
+                />
+              </div>
+              <p><strong>Ejercicio 3</strong><br />Favorite Sequence</p>
+            </a>
+          </div>
+        </div>
+
+        <!-- SEGUNDA FILA -->
+        <div class="exercises row">
+          <div class="exercise col-12 col-sm-6 col-md-4 mb-4">
+            <a href="Ejercicios/Ejercicio4.html">
+              <div class="image-container">
+                <img
+                  src="imagenes/ordenado.png"
+                  alt="Ejercicio 1"
+                  class="main-image"
+                />
+                <img
+                  src="imagenes/medio.png"
+                  alt="Medio"
+                  class="overlay-image"
+                />
+              </div>
+              <p><strong>Ejercicio 4</strong><br />2^Sort</p>
+            </a>
+          </div>
+          <div class="exercise col-12 col-sm-6 col-md-4 mb-4">
+            <a href="Ejercicios/Ejercicio5.html">
+              <div class="image-container">
+                <img
+                  src="imagenes/multiplicar.png"
+                  alt="Ejercicio 2"
+                  class="main-image"
+                />
+                <img
+                  src="imagenes/medio.png"
+                  alt="Medio"
+                  class="overlay-image"
+                />
+              </div>
+              <p>
+                <strong>Ejercicio 5</strong><br />Walk on a multiplication table
+              </p>
+            </a>
+          </div>
+          <div class="exercise col-12 col-sm-6 col-md-4 mb-4">
+            <a href="Ejercicios/Ejercicio6.html">
+              <div class="image-container">
+                <img
+                  src="imagenes/suma.png"
+                  alt="Ejercicio 3"
+                  class="main-image"
+                />
+                <img
+                  src="imagenes/medio.png"
+                  alt="medio.png"
+                  class="overlay-image"
+                />
+              </div>
+              <p><strong>Ejercicio 6</strong><br />Vlad and a Sum of Digits</p>
+            </a>
+          </div>
+        </div>
+
+        <!-- TERCERA FILA -->
+        <div class="exercises row">
+          <div class="exercise col-12 col-sm-6 col-md-4 mb-4">
+            <a href="Ejercicios/Ejercicio7.html">
+              <div class="image-container">
+                <img
+                  src="imagenes/repeticion.png"
+                  alt="Ejercicio 1"
+                  class="main-image"
+                />
+                <img
+                  src="imagenes/medio.png"
+                  alt="Medio"
+                  class="overlay-image"
+                />
+              </div>
+              <p><strong>Ejercicio 7</strong><br />Simple Repetition</p>
+            </a>
+          </div>
+          <div class="exercise col-12 col-sm-6 col-md-4 mb-4">
+            <a href="Ejercicios/Ejercicio8.html">
+              <div class="image-container">
+                <img
+                  src="imagenes/team.png"
+                  alt="Ejercicio 2"
+                  class="main-image"
+                />
+                <img
+                  src="imagenes/medio.png"
+                  alt="Medio"
+                  class="overlay-image"
+                />
+              </div>
+              <p><strong>Ejercicio 8</strong><br />Diverse Team</p>
+            </a>
+          </div>
+          <div class="exercise col-12 col-sm-6 col-md-4 mb-4">
+            <a href="Ejercicios/Ejercicio9.html">
+              <div class="image-container">
+                <img
+                  src="imagenes/gusano.png"
+                  alt="Ejercicio 3"
+                  class="main-image"
+                />
+                <img
+                  src="imagenes/medio.png"
+                  alt="Medio"
+                  class="overlay-image"
+                />
+              </div>
+              <p><strong>Ejercicio 9</strong><br />Worms</p>
+            </a>
+          </div>
+        </div>
+
+        <!-- CUARTA FILA -->
+        <div class="exercises row">
+          <div class="exercise col-12 col-sm-6 col-md-4 mb-4">
+            <a href="Ejercicios/Ejercicio10.html">
+              <div class="image-container">
+                <img
+                  src="imagenes/prefix.png"
+                  alt="Ejercicio 1"
+                  class="main-image"
+                />
+                <img
+                  src="imagenes/dificil.png"
+                  alt="Dificil"
+                  class="overlay-image"
+                />
+              </div>
+              <p><strong>Ejercicio 10</strong><br />Longest Common Prefix</p>
+            </a>
+          </div>
+          <div class="exercise col-12 col-sm-6 col-md-4 mb-4">
+            <a href="Ejercicios/Ejercicio11.html">
+              <div class="image-container">
+                <img
+                  src="imagenes/ocurrence.png"
+                  alt="Ejercicio 2"
+                  class="main-image"
+                />
+                <img
+                  src="imagenes/dificil.png"
+                  alt="Dificil"
+                  class="overlay-image"
+                />
+              </div>
+              <p>
+                <strong>Ejercicio 11</strong><br />First and Last Occurrences
+              </p>
+            </a>
+          </div>
+          <div class="exercise col-12 col-sm-6 col-md-4 mb-4">
+            <a href="Ejercicios/Ejercicio12.html">
+              <div class="image-container">
+                <img
+                  src="imagenes/minmax.png"
+                  alt="Ejercicio 3"
+                  class="main-image"
+                />
+                <img
+                  src="imagenes/dificil.png"
+                  alt="Dificil"
+                  class="overlay-image"
+                />
+              </div>
+              <p>
+                <strong>Ejercicio 12</strong><br />Minimum and maximum of an
+                array
+              </p>
+            </a>
+          </div>
+        </div>
+      </section>
+    </div>
+  </body>
+
+  <footer class="text-white py-5">
+    <div class="container">
+      <div class="row">
+        <!-- Columna 1: Info del proyecto -->
+        <div class="col-md-3 mb-4">
+          <h5>Desglosando Algoritmos</h5>
+          <ul class="list-unstyled">
+            <li>Universidad Francisco de Paula Santander</li>
+            <li>2025</li>
+          </ul>
+        </div>
+
+        <!-- Columna 2: Equipo -->
+        <div class="col-md-3 mb-4">
+          <h5>Equipo</h5>
+          <ul class="list-unstyled">
+            <li>Jesús Gabriel Torres Daza</li>
+            <li>Emerson Amir Vera Gonzalez</li>
+            <li>Johan Steven Bueno Rojas</li>
+            <li>Kevin David Arias Villamizar</li>
+          </ul>
+        </div>
+
+        <!-- Columna 3: Secciones -->
+        <div class="col-md-3 mb-4 footer-section">
+          <h5>Secciones</h5>
+          <ul class="list-unstyled">
+            <li>
+              <a href="/" class="text-white text-decoration-none">Inicio</a>
+            </li>
+            <li>
+              <a href="#ejercicios" class="text-white text-decoration-none"
+                >Ejercicios</a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <!-- Columna 4: Contacto -->
+        <div class="col-md-3 mb-4 footer-section">
+          <h5>Contacto</h5>
+          <ul class="list-unstyled">
+            <li>
+              <a
+                href="https://www.linkedin.com/in/jes%C3%BAs-gabriel-torres-daza-437625262?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+                target="_blank"
+                class="text-white text-decoration-none"
+                ><i class="fab fa-linkedin me-2"></i>LinkedIn Gabriel Torres</a
+              >
+            </li>
+            <li>
+              <a
+                href="www.linkedin.com/in/emerson-vera-gonzalez-8a1274272"
+                target="_blank"
+                class="text-white text-decoration-none"
+                ><i class="fab fa-linkedin me-2"></i>LinkedIn Emerson Vera</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://www.linkedin.com/in/johan-steven-bueno-rojas-00958326b/"
+                target="_blank"
+                class="text-white text-decoration-none"
+                ><i class="fab fa-linkedin me-2"></i>LinkedIn Steven Bueno</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://www.linkedin.com/in/kevin-arias-319728369/"
+                target="_blank"
+                class="text-white text-decoration-none"
+                ><i class="fab fa-linkedin me-2"></i>LinkedIn Kevin Arias</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Línea inferior -->
+      <div class="text-center text-secondary border-top pt-3 mt-4 small">
+        © 2025 Desglosando Algoritmos. Todos los derechos reservados.
+      </div>
+    </div>
+  </footer>
+
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO"
+    crossorigin="anonymous"
+  ></script>
+</html>

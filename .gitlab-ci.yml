@@ -1,0 +1,15 @@
+image: alpine:latest
+
+pages:
+  stage: deploy
+  before_script:
+    - apk add --no-cache bash coreutils
+  script:
+    - mkdir public
+    - find . -maxdepth 1 ! -name public ! -name . -exec cp -r {} public/ \;
+  artifacts:
+    paths:
+      - public
+  rules:
+    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
+
